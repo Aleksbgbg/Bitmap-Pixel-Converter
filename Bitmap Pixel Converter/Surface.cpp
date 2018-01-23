@@ -6,8 +6,13 @@
 #include <Windows.h>
 
 Surface::Surface(const std::string& filename)
+	:
+	Surface(std::ifstream{ filename, std::ios::binary })
 {
-	std::ifstream file(filename, std::ios::binary);
+}
+
+Surface::Surface(std::ifstream file)
+{
 	assert(file);
 
 	BITMAPFILEHEADER bitmapFileHeader;

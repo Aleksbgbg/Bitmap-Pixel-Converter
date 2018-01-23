@@ -9,6 +9,7 @@ class Surface
 {
 public:
 	explicit Surface(const std::string& filename);
+	explicit Surface(std::ifstream file);
 
 public:
 	void PutPixel(const int x, const int y, const Colour colour);
