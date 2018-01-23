@@ -23,6 +23,11 @@ bool Colour::operator ==(const Colour& source) const
 	return value == source.value;
 }
 
+bool Colour::operator !=(const Colour& source) const
+{
+	return !(*this == source);
+}
+
 bool Colour::CompareIgnoreAlpha(const Colour& source) const
 {
 	return (value & 0xFFFFFF) == (source.value & 0xFFFFFF);

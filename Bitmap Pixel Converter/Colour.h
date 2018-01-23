@@ -10,6 +10,7 @@ public:
 	
 public:
 	bool operator ==(const Colour& source) const;
+	bool operator !=(const Colour& source) const;
 
 public:
 	bool CompareIgnoreAlpha(const Colour& source) const;
@@ -20,5 +21,5 @@ public:
 	unsigned int GetBlue() const;
 
 private:
-	const unsigned int value = 0;
+	unsigned int value = 0;
 };
