@@ -33,5 +33,26 @@ int main()
 
 	std::ofstream putpixelFile{ bitmapPath.substr(0, bitmapPath.find_last_of('.')) + ".cpp" };
 
+	for (int y = 0; y < image.GetHeight(); ++y)
+	{
+		for (int x = 0; x < image.GetWidth(); ++x)
+		{
+			Colour pixel = image.GetPixel(x, y);
+
+			putpixelFile
+				<< "gfx.PutPixel("
+				<< (x == 0 ? "x" : "x + " + std::to_string(x))
+				<< ", "
+				<< (y == 0 ? "y" : "y + " + std::to_string(y))
+				<< ", Color{ "
+				<< pixel.GetRed()
+				<< ", "
+				<< pixel.GetGreen()
+				<< ", "
+				<< pixel.GetBlue()
+				<< " });\n";
+		}
+	}
+
 	return 0;
 }
