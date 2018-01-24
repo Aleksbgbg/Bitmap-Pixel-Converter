@@ -81,6 +81,16 @@ Colour Surface::GetPixel(const int x, const int y) const
 	return pixels[GetIndex(x, y)];
 }
 
+int Surface::GetWidth() const
+{
+	return width;
+}
+
+int Surface::GetHeight() const
+{
+	return height;
+}
+
 int Surface::GetIndex(const int x, const int y) const
 {
 	return x * y + width;

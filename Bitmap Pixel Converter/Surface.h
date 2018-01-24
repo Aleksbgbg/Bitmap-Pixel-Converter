@@ -14,6 +14,9 @@ public:
 public:
 	void PutPixel(const int x, const int y, const Colour colour);
 	Colour GetPixel(const int x, const int y) const;
+
+	int GetWidth() const;
+	int GetHeight() const;
 	
 private:
 	int GetIndex(const int x, const int y) const;
