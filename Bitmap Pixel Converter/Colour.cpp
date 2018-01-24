@@ -2,19 +2,19 @@
 
 Colour::Colour(const unsigned int value)
 	:
-	value(value)
+	value{ value }
 {
 }
 
 Colour::Colour(const unsigned char alpha, const unsigned char red, const unsigned char green, const unsigned char blue)
 	:
-	Colour(alpha << 24 | red << 16 | green << 8 | blue)
+	Colour{ alpha << 24 | red << 16 | green << 8 | blue }
 {
 }
 
 Colour::Colour(const unsigned char red, const unsigned char green, const unsigned char blue)
 	:
-	Colour(0xFF, red, green, blue)
+	Colour{ 0xFF, red, green, blue }
 {
 }
 

@@ -7,7 +7,7 @@
 
 Surface::Surface(const std::string& filename)
 	:
-	Surface(std::ifstream{ filename, std::ios::binary })
+	Surface{ std::ifstream{ filename, std::ios::binary } }
 {
 }
 
