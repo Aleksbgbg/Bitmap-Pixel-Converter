@@ -4,13 +4,11 @@
 #include <iostream>
 #include <string>
 
-std::ifstream get_bitmap_stream()
+std::ifstream get_bitmap_stream(std::string& bitmapPath)
 {
 	while (true)
 	{
 		std::cout << "Enter bitmap path: ";
-
-		std::string bitmapPath;
 
 		std::getline(std::cin, bitmapPath);
 
@@ -30,7 +28,10 @@ std::ifstream get_bitmap_stream()
 
 int main()
 {
-	const Surface image{ get_bitmap_stream() };
+	std::string bitmapPath;
+	const Surface image{ get_bitmap_stream(bitmapPath) };
+
+	std::ofstream putpixelFile{ bitmapPath.substr(0, bitmapPath.find_last_of('.')) + ".cpp" };
 
 	return 0;
 }
