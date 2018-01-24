@@ -14,11 +14,14 @@ std::ifstream get_bitmap_stream()
 
 		std::getline(std::cin, bitmapPath);
 
-		std::ifstream bitmapFile{ bitmapPath, std::ios::binary };
-
-		if (bitmapFile)
+		if (bitmapPath.find('.') != std::string::npos && bitmapPath.substr(bitmapPath.find_last_of('.')) == ".bmp")
 		{
-			return bitmapFile;
+			std::ifstream bitmapFile{ bitmapPath, std::ios::binary };
+
+			if (bitmapFile)
+			{
+				return bitmapFile;
+			}
 		}
 
 		std::cout << "File is not good.\n\n";
