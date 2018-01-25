@@ -33,7 +33,7 @@ Colour get_ignore_colour()
 	std::string ignoreColourString;
 
 	std::cin >> ignoreColourString;
-
+	
 	return Colour{ std::stoul(ignoreColourString, nullptr, 16) };
 }
 

@@ -93,5 +93,5 @@ int Surface::GetHeight() const
 
 int Surface::GetIndex(const int x, const int y) const
 {
-	return x * y + width;
+	return x + y * width;
 }
