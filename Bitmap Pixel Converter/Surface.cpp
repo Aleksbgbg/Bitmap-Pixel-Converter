@@ -33,8 +33,8 @@ Surface::Surface(std::ifstream file)
 
 	if (bitmapInfoHeader.biHeight >= 0)
 	{
-		start = height;
-		end = 0;
+		start = height - 1;
+		end = -1;
 		increment = -1;
 	}
 	else
